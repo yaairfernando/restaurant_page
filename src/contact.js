@@ -2,11 +2,15 @@ import '../styles/styles.css'
 
 const contact = (() => {
   const contactPage = () => {
+    document.querySelector('#tab-two').classList.add('active');
+    document.querySelector('#tab-one').classList.remove('active');
     if (!document.querySelector('.contact-container')) {
-      document.querySelector('#tab-two').classList.add('active');
-      document.querySelector('#tab-one').classList.remove('active');
       let contactContainer = document.createElement('div');
       contactContainer.classList.add('contact-container');
+      contactContainer.innerHTML = info();
+      document.querySelector('#content').appendChild(contactContainer);
+    } else {
+      let contactContainer = document.querySelector('.contact-container')
       contactContainer.innerHTML = info();
       document.querySelector('#content').appendChild(contactContainer);
     }
