@@ -1,1 +1,3 @@
-console.log("Hellooddd")
+import homepage from './homepage';
+
+homepage.render();
