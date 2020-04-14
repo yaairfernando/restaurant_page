@@ -1,13 +1,14 @@
-import homepage from './homepage';
-import contact from './contact';
-import menu from './menu';
+import '../styles/styles.css';
+import render from './homepage';
+import contactPage from './contact';
+import renderMenu from './menu';
 
-homepage.render();
+render();
 
 document.querySelector('#tab-one').addEventListener('click', () => {
-  menu.renderMenu();
+  renderMenu();
 });
 
 document.querySelector('#tab-two').addEventListener('click', () => {
-  contact.contactPage();
+  contactPage();
 });
