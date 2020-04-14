@@ -14,7 +14,7 @@ const review = () => {
   return reviewContainer;
 };
 
-const createTab = ({id, text}) => {
+const createTab = ({ id, text }) => {
   const tab = document.createElement('div');
   tab.classList.add(id);
   tab.id = id;
@@ -23,15 +23,15 @@ const createTab = ({id, text}) => {
   link.textContent = text;
   tab.appendChild(link);
   return tab;
-}
+};
 
 const tabs = () => {
   const tabsContianer = document.createElement('div');
   tabsContianer.classList.add('tabs-container');
   const tabsArr = [
-    { id: 'tab-one', text: 'Menu'},
-    { id: 'tab-two', text: 'Contact Us'}
-  ]
+    { id: 'tab-one', text: 'Menu' },
+    { id: 'tab-two', text: 'Contact Us' },
+  ];
   tabsContianer.append(...tabsArr.map(createTab));
   return tabsContianer;
 };
