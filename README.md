@@ -72,7 +72,7 @@ user@pc:~$ npm install or yarn install
 ```
 
 ```
-user@pc:~$ npm server
+user@pc:~$ npm run server
 ```
 
 Open your browser on [http://localhost:3000](http://localhost:3000)
