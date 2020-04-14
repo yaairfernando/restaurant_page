@@ -1,23 +1,8 @@
-import '../styles/styles.css'
+import '../styles/styles.css';
 
 const contact = (() => {
-  const contactPage = () => {
-    document.querySelector('#tab-two').classList.add('active');
-    document.querySelector('#tab-one').classList.remove('active');
-    if (!document.querySelector('.contact-container')) {
-      let contactContainer = document.createElement('div');
-      contactContainer.classList.add('contact-container');
-      contactContainer.innerHTML = info();
-      document.querySelector('#content').appendChild(contactContainer);
-    } else {
-      let contactContainer = document.querySelector('.contact-container')
-      contactContainer.innerHTML = info();
-      document.querySelector('#content').appendChild(contactContainer);
-    }
-  }
-
   const info = () => {
-    let info =  `
+    const info = `
       <div class="info">
         <p>cozzainfuriata@gmail.com</p>
         <p>842 256 2568</p>
@@ -27,12 +12,26 @@ const contact = (() => {
         <div class="social-item"></div>
         <div class="social-item"></div>
       </div>
-    `
-    return info
-  }
+    `;
+    return info;
+  };
 
+  const contactPage = () => {
+    document.querySelector('#tab-two').classList.add('active');
+    document.querySelector('#tab-one').classList.remove('active');
+    if (!document.querySelector('.contact-container')) {
+      const contactContainer = document.createElement('div');
+      contactContainer.classList.add('contact-container');
+      contactContainer.innerHTML = info();
+      document.querySelector('#content').appendChild(contactContainer);
+    } else {
+      const contactContainer = document.querySelector('.contact-container');
+      contactContainer.innerHTML = info();
+      document.querySelector('#content').appendChild(contactContainer);
+    }
+  };
 
-  return { contactPage }
-})()
+  return { contactPage };
+})();
 
 export default contact;

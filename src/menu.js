@@ -1,23 +1,8 @@
-import '../styles/styles.css'
+import '../styles/styles.css';
 
 const menu = (() => {
-  const renderMenu = () => {
-    document.querySelector('#tab-one').classList.add('active');
-    document.querySelector('#tab-two').classList.remove('active');
-    if (!document.querySelector('.contact-container')) {
-      let menu = document.createElement('div');
-      menu.classList.add('contact-container');
-      menu.innerHTML = dayMenu();
-      document.querySelector('#content').appendChild(menu);
-    } else {
-      let menu = document.querySelector('.contact-container')
-      menu.innerHTML = dayMenu();
-      document.querySelector('#content').appendChild(menu);
-    }
-  }
-
   const dayMenu = () => {
-    let menu = `
+    const menu = `
       <div class="menu">
         <ul>
           <li class="heading">
@@ -26,6 +11,22 @@ const menu = (() => {
           <li>
             <p>BURRATA 12</p>
             <small>date conserva, roasted pistachio, crispy pancetta, arugula, grilled bread</small>
+          </li>
+          <li>
+            <p>PROSCIUTTO BRUSCHETTA 11</p>
+            <small>crescenza cheese, grilled asparagus, truffle, grana padano</small>
+          </li>
+          <li>
+            <p>BURRATA 12</p>
+            <small>date conserva, roasted pistachio, crispy pancetta, arugula, grilled bread</small>
+          </li>
+          <li>
+            <p>PROSCIUTTO BRUSCHETTA 11</p>
+            <small>crescenza cheese, grilled asparagus, truffle, grana padano</small>
+          </li>
+          <li>
+            <p>GRILLED CAULIFLOWER* 12</p>
+            <small>fried egg, baby asparagus, toasted breadcrumb, pancetta cream, lemon</small>
           </li>
           <li>
             <p>PROSCIUTTO BRUSCHETTA 11</p>
@@ -52,14 +53,49 @@ const menu = (() => {
             <p>CRISPY CALAMARI 14</p>
             <small>arugula & grilled lemon vinaigrette</small>
           </li>
+          <li>
+            <p>PROSCIUTTO BRUSCHETTA 11</p>
+            <small>crescenza cheese, grilled asparagus, truffle, grana padano</small>
+          </li>
+          <li>
+            <p>GRILLED CAULIFLOWER* 12</p>
+            <small>fried egg, baby asparagus, toasted breadcrumb, pancetta cream, lemon</small>
+          </li>
+          <li>
+          <p>CRISPY CALAMARI 14</p>
+          <small>arugula & grilled lemon vinaigrette</small>
+          </li>
+          <li>
+            <p>PROSCIUTTO BRUSCHETTA 11</p>
+            <small>crescenza cheese, grilled asparagus, truffle, grana padano</small>
+          </li>
+          <li>
+            <p>GRILLED CAULIFLOWER* 12</p>
+            <small>fried egg, baby asparagus, toasted breadcrumb, pancetta cream, lemon</small>
+          </li>
         </ul>
       </div>
-    `
+    `;
 
-    return menu
-  }
+    return menu;
+  };
 
-  return { renderMenu }
-})()
+  const renderMenu = () => {
+    document.querySelector('#tab-one').classList.add('active');
+    document.querySelector('#tab-two').classList.remove('active');
+    if (!document.querySelector('.contact-container')) {
+      const menu = document.createElement('div');
+      menu.classList.add('contact-container');
+      menu.innerHTML = dayMenu();
+      document.querySelector('#content').appendChild(menu);
+    } else {
+      const menu = document.querySelector('.contact-container');
+      menu.innerHTML = dayMenu();
+      document.querySelector('#content').appendChild(menu);
+    }
+  };
+
+  return { renderMenu };
+})();
 
 export default menu;

@@ -9,6 +9,8 @@ body {
   background-image: url('../assets/background.jpg');
   background-position: bottom;
   background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
 }
 
 h1 {
@@ -103,10 +105,12 @@ h1 {
   width: 1.6rem;
   height: 1.6rem;
   margin: .5rem;
+  transition: all 0.5s;
 }
 
 .social-item:hover {
   cursor: pointer;
+  transform: rotateY(360deg)
 }
 
 .social-item:nth-child(1) {
@@ -119,18 +123,26 @@ h1 {
 
 .menu {
   display: flex;
+  height: 25rem;
+  overflow-y: scroll;
 }
 
 ul {
   margin-top: 0;
 }
 
-ul > li.heading {
+ul > li {
   list-style: none;
+  padding: .2rem;
+  margin: .3rem 0;
+}
+
+ul > li:hover {
+  background-color: rgba(255,255,255,0.3);
 }
 
 ul > li > p {
-  margin: 0.65rem;
+  margin: 0.65rem 0 0.65rem 0;
 }
 
 @media (max-width: 600px) {
