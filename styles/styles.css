@@ -1,0 +1,176 @@
+body {
+  padding: 1rem;
+  font-family: Raleway;
+}
+
+.container {
+  height: calc(100vh - 3rem);
+  width: 100%;
+  background-image: url('../assets/background.jpg');
+  background-position: bottom;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+
+h1 {
+  color: #fff;
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  width: 30rem;
+  text-align: center;
+}
+
+.review-container {
+  width: 35rem;
+  margin: 0 auto;
+  padding-top: 4rem;
+  font-size: .85rem;
+}
+
+.review {
+  background-color: rgba(0,0,0,0.8);
+  padding: 1rem;
+}
+
+.review > p {
+  color: #fff;
+  text-align: justify;
+}
+
+.tabs-container,
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.tab-one,
+.tab-two {
+  width: 50%;
+  background: #1B1829;
+  text-align: center;
+  padding: 1rem 0 2rem 0;
+  border-bottom: 1px solid #807E8B;
+  transition: all .5s;
+}
+
+.tab-one:hover,
+.tab-two:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.tab-one > a,
+.tab-two > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.contact-container {
+  margin-top: 0;
+  background: #1B1829;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+  margin: 0 auto;
+}
+
+.info {
+  padding: 1rem;
+}
+
+.tab-two.active,
+.tab-one.active {
+  border-bottom: 2px solid #D5234A !important;
+}
+
+.social {
+  margin-bottom: 1rem;
+}
+
+.social-item {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: .5rem;
+  transition: all 0.5s;
+}
+
+.social-item:hover {
+  cursor: pointer;
+  transform: rotateY(360deg)
+}
+
+.social-item:nth-child(1) {
+  background-image: url('../assets/facebook.png');
+}
+
+.social-item:nth-child(2) {
+  background-image: url('../assets/twitter.png');
+}
+
+.menu {
+  display: flex;
+  height: 25rem;
+  overflow-y: scroll;
+}
+
+ul {
+  margin-top: 0;
+}
+
+ul > li {
+  list-style: none;
+  padding: .2rem;
+  margin: .3rem 0;
+}
+
+ul > li:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+ul > li > p {
+  margin: 0.65rem 0 0.65rem 0;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .review-container {
+    font-size: .7rem;
+  }
+
+  .contact-container,
+  .social,
+  .review-container,
+  .tabs-container {
+    width: 20rem;
+  }
+
+  li.heading {
+    font-size: .6rem;
+  }
+
+  li {
+    font-size: .6rem;
+  }
+
+  ul > li > p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
